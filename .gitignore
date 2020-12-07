@@ -1,0 +1,5 @@
+./
+../
+.idea/
+--pycache__/
+evns.py

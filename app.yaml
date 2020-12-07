@@ -1,0 +1,19 @@
+published:
+  - app:
+      category: life
+      application: weather
+      name: 天气
+      published_date: 2020-12-1
+      url: /service/weather
+      desc: this is a weather app.
+
+  - app:
+      category: learn
+      application: ml
+      name: 智能识别
+      published_date: 2020-12-1
+      url: /ml/get_ml
+      desc: this is a ml app.
+
+developing:
+  - app:
