@@ -15,16 +15,15 @@ class WeatherView(View, CommonResponseMixin):
         else:
             open_id = request.session.get('open_id')
             user = User.objects.filter(open_id=open_id)[0]
-            cities = json.loads(user.focus_city)
-            city = cities[0]
+            city = json.loads(user.focus_city)
             area =city['area']
             response = []
             area = area[:-1]
             data = yike(area)
             data['city_info'] = city
             response.append(data)
-            data = self.wrap_json_response(data=response)
-            return JsonResponse(data=data, safe=False)
+            response = self.wrap_json_response(data=response, code=ReturnCode.SUCCESS)
+        return JsonResponse(data=response, safe=False)
     def post(self, request):
         received_body = request.body
         received_body = json.loads(received_body)
